@@ -1,4 +1,4 @@
-# LUMÉRA — Luxury Makeup Demo Website
+# LUMÉRA — Luxury Makeup Demo Website (v2 Cinematic Redesign)
 
 A premium, demo makeup brand website built by **AKCLNT** — designed around a cinematic gold-radiance hero video.
 

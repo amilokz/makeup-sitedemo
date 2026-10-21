@@ -3,180 +3,246 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUMÉRA — Luxury Makeup & Radiance Skincare | Demo by AKCLNT</title>
-<meta name="description" content="LUMÉRA is a luxury makeup demo experience — gold-infused luminous serum, satin lipsticks and flawless foundations. Crafted for a dewy, lit-from-within glow. Demo website by AKCLNT.">
-<meta property="og:title" content="LUMÉRA — Radiance, Bottled in Gold">
-<meta property="og:description" content="Luxury makeup & skincare demo. Luminous serum, satin lip colour and a glow that looks like light itself.">
+<title>LUMÉRA — Beauty, in Its Purest Light | Luxury Makeup Demo by AKCLNT</title>
+<meta name="description" content="LUMÉRA — a cinematic luxury beauty experience. Gold-infused luminous serum, satin lip colour and silk foundations, art-directed like a fashion campaign. Demo website by AKCLNT.">
+<meta property="og:title" content="LUMÉRA — Beauty, in Its Purest Light">
+<meta property="og:description" content="A cinematic luxury makeup experience: gold radiance serum, satin lips, silk skin.">
 <meta property="og:image" content="assets/poster.jpg">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#0e0b09">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+<link rel="preload" as="image" href="assets/poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#shop">Skip to shopping</a>
 
-<div class="announce">Complimentary shipping over $75 &nbsp;·&nbsp; Free shade-matching consultation &nbsp;·&nbsp; ✨ New: The Gold Radiance Collection</div>
+<div class="preloader" id="preloader" aria-hidden="true"><div class="pre-mono">L</div><div class="pre-line"></div><p>LUMÉRA</p></div>
 
 <header id="header">
-  <button class="burger" id="burger" aria-label="Menu">☰</button>
-  <nav class="nav-left">
-    <a href="#shop">Shop</a><a href="#shades">Shades</a><a href="#ritual">The Ritual</a><a href="#reviews">Reviews</a>
+  <button class="burger" id="burger" aria-label="Open menu">☰</button>
+  <nav class="nav-left" aria-label="Primary">
+    <a href="#shop">Shop</a><a href="#collections">Collections</a><a href="#shades">Shades</a><a href="#ritual">Ritual</a>
   </nav>
-  <a class="logo" href="#">LUM<span>É</span>RA</a>
+  <a class="logo" href="#top" aria-label="LUMÉRA home">LUM<span>É</span>RA</a>
   <div class="nav-right">
-    <a href="#story" class="hide-m">Our Story</a>
-    <button class="bag-btn" id="bagBtn" aria-label="Shopping bag">Bag <span id="bagCount">0</span></button>
+    <a href="#story" class="hide-m">Maison</a><a href="#reviews" class="hide-m">Reviews</a>
+    <button class="bag-btn" id="bagBtn" aria-label="Open shopping bag">Bag <span id="bagCount">0</span></button>
   </div>
 </header>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#shop">Shop</a><a href="#shades">Shades</a><a href="#ritual">The Ritual</a><a href="#reviews">Reviews</a><a href="#story">Our Story</a>
+  <a href="#shop">Shop</a><a href="#collections">Collections</a><a href="#shades">Shades</a><a href="#ritual">Ritual</a><a href="#story">Maison</a><a href="#reviews">Reviews</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline poster="assets/poster.jpg">
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="top">
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/poster.jpg" aria-label="LUMÉRA gold radiance campaign film">
     <source src="assets/hero.mp4" type="video/mp4">
   </video>
-  <div class="hero-shade"></div>
-  <div class="hero-content reveal">
-    <p class="eyebrow">✦ The Gold Radiance Collection ✦</p>
-    <h1>Radiance,<br><em>Bottled in Gold.</em></h1>
-    <p class="hero-sub">A luminous serum and satin lip colour infused with light-reflecting gold pearls — for skin that doesn't just glow, it <strong>radiates</strong>.</p>
-    <div class="hero-cta">
-      <a href="#shop" class="btn btn-gold">Shop Bestsellers</a>
-      <a href="#shades" class="btn btn-ghost">Find Your Shade ↓</a>
-    </div>
-    <div class="hero-stats">
-      <div><strong>4.9★</strong><span>12,400+ reviews</span></div>
-      <div><strong>24h</strong><span>hydration glow</span></div>
-      <div><strong>100%</strong><span>cruelty-free</span></div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-frame" aria-hidden="true"></div>
+  <p class="hero-side" aria-hidden="true">PARIS&ensp;·&ensp;DUBAI&ensp;·&ensp;NEW YORK</p>
+
+  <div class="hero-content">
+    <p class="hero-edition"><span class="fade-up d1">N° 01</span><i class="fade-up d1"></i><span class="fade-up d2">The Gold Radiance Edition</span></p>
+    <h1>
+      <span class="line"><span class="fade-up d2">Beauty,</span></span>
+      <span class="line"><span class="fade-up d3">in its <em>purest</em></span></span>
+      <span class="line"><span class="fade-up d4">light<em>.</em></span></span>
+    </h1>
+    <p class="hero-sub fade-up d5">A luminous serum and satin colour, infused with light-reflecting gold pearls. Not makeup that covers — <strong>light that reveals.</strong></p>
+    <div class="hero-cta fade-up d6">
+      <a href="#shop" class="btn btn-gold">Shop Now <span aria-hidden="true">→</span></a>
+      <a href="#collections" class="btn btn-line">Explore the Collection</a>
     </div>
   </div>
-  <div class="scroll-hint">Scroll</div>
+
+  <div class="hero-bottom fade-up d7">
+    <div class="hb-stat"><strong>4.9 ★</strong><span>12,400+ reviews</span></div>
+    <div class="hb-div" aria-hidden="true"></div>
+    <div class="hb-stat"><strong>24 Hours</strong><span>of hydration glow</span></div>
+    <div class="hb-div" aria-hidden="true"></div>
+    <div class="hb-stat"><strong>100% Vegan</strong><span>cruelty-free, always</span></div>
+    <div class="hb-scroll" aria-hidden="true"><span>Scroll</span><i></i></div>
+  </div>
 </section>
 
-<div class="marquee"><div class="marquee-track">
-  <span>DERMATOLOGIST APPROVED ✦ VEGAN & CRUELTY-FREE ✦ GOLD PEARL INFUSED ✦ CLEAN FORMULAS ✦ LOVED IN 40+ COUNTRIES ✦ </span>
-  <span>DERMATOLOGIST APPROVED ✦ VEGAN & CRUELTY-FREE ✦ GOLD PEARL INFUSED ✦ CLEAN FORMULAS ✦ LOVED IN 40+ COUNTRIES ✦ </span>
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+  <span>Gold Pearl Infused&ensp;✦&ensp;Dermatologist Approved&ensp;✦&ensp;Clean Formulas&ensp;✦&ensp;Loved in 40+ Countries&ensp;✦&ensp;</span>
+  <span>Gold Pearl Infused&ensp;✦&ensp;Dermatologist Approved&ensp;✦&ensp;Clean Formulas&ensp;✦&ensp;Loved in 40+ Countries&ensp;✦&ensp;</span>
 </div></div>
 
-<!-- CATEGORIES -->
-<section class="section" id="categories">
-  <p class="eyebrow center">Curated For You</p>
-  <h2 class="title center">Shop by <em>Ritual</em></h2>
-  <div class="cat-grid">
-    <a href="#shop" class="cat-card reveal"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=80" alt="Skincare serums" loading="lazy"><div><h3>Skin</h3><p>Serums & elixirs</p></div></a>
-    <a href="#shades" class="cat-card reveal"><img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=800&q=80" alt="Lipstick" loading="lazy"><div><h3>Lips</h3><p>Satin & matte colour</p></div></a>
-    <a href="#shop" class="cat-card reveal"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80" alt="Face palettes" loading="lazy"><div><h3>Face</h3><p>Foundation & glow</p></div></a>
-    <a href="#shop" class="cat-card reveal"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80" alt="Eye makeup" loading="lazy"><div><h3>Eyes</h3><p>Shadow & mascara</p></div></a>
+<!-- ══════════ MANIFESTO ══════════ -->
+<section class="manifesto" id="story">
+  <p class="kicker reveal">The Maison</p>
+  <p class="manifesto-text reveal">We believe radiance is not applied — it is <em>awakened</em>. Every LUMÉRA formula begins as skincare, finishes as light, and is worn like <em>confidence</em>.</p>
+  <div class="manifesto-row reveal">
+    <span>Est. MMXXVI</span><span class="dot" aria-hidden="true">✦</span><span>Formulated in Paris</span><span class="dot" aria-hidden="true">✦</span><span>Worn Everywhere</span>
   </div>
 </section>
 
-<!-- SHOP -->
-<section class="section alt" id="shop">
-  <p class="eyebrow center">The Icons</p>
-  <h2 class="title center">Bestsellers</h2>
-  <p class="sub center">The four products our customers re-order before they run out.</p>
-  <div class="product-grid" id="productGrid"></div>
+<!-- ══════════ COLLECTIONS ══════════ -->
+<section class="collections" id="collections">
+  <div class="sec-head reveal">
+    <p class="kicker">Immersive Collections</p>
+    <h2>Enter the <em>Collections</em></h2>
+  </div>
+  <div class="col-grid">
+    <a href="#shop" class="col-panel col-tall reveal">
+      <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=1000&q=80" alt="Radiance skincare serums" loading="lazy" data-parallax>
+      <div class="col-info"><span class="col-no">01</span><h3>Skin, Lit</h3><p>Serums &amp; elixirs</p><span class="col-arrow" aria-hidden="true">→</span></div>
+    </a>
+    <a href="#shades" class="col-panel reveal">
+      <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=1000&q=80" alt="Satin lip colour" loading="lazy" data-parallax>
+      <div class="col-info"><span class="col-no">02</span><h3>Lips, Satin</h3><p>Colour that cares</p><span class="col-arrow" aria-hidden="true">→</span></div>
+    </a>
+    <a href="#shop" class="col-panel reveal">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1000&q=80" alt="Face palettes and foundations" loading="lazy" data-parallax>
+      <div class="col-info"><span class="col-no">03</span><h3>Face, Silk</h3><p>Foundation &amp; glow</p><span class="col-arrow" aria-hidden="true">→</span></div>
+    </a>
+  </div>
 </section>
 
-<!-- RITUAL / STORY -->
-<section class="section split" id="ritual">
-  <div class="split-media reveal">
-    <img src="assets/model.jpg" alt="Model with luminous glowing skin">
-    <div class="float-card"><strong>98%</strong><p>said skin looked<br>“lit from within”*</p></div>
+<!-- ══════════ SPOTLIGHT — PRODUCT DETAIL ══════════ -->
+<section class="spotlight">
+  <div class="spot-media reveal">
+    <div class="spot-ring" aria-hidden="true"></div>
+    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=900&q=80" alt="Radiance Gold Serum bottle" loading="lazy">
+    <span class="spot-tag">The Icon — N° 01</span>
   </div>
-  <div class="split-text reveal" id="story">
-    <p class="eyebrow">The Ritual</p>
-    <h2 class="title">Three minutes.<br><em>All-day light.</em></h2>
+  <div class="spot-text reveal">
+    <p class="kicker light">Featured Product</p>
+    <h2>Radiance <em>Gold Serum</em></h2>
+    <div class="spot-stars" aria-label="Rated 4.9 out of 5">★★★★★ <span>4.9 — 3,214 reviews</span></div>
+    <p class="spot-desc">Two drops, pressed into skin. Micro-fine gold pearls melt on contact — blurring, brightening and hydrating in a single gesture. Wear it alone for the famous “lit-from-within” finish, or beneath foundation as light itself, bottled.</p>
+    <ul class="spot-notes">
+      <li>24k gold pearl complex</li><li>Hyaluronic acid</li><li>Vitamin E</li><li>No glitter, no grease</li>
+    </ul>
+    <div class="spot-buy">
+      <span class="spot-price"><s>$72</s> $58</span>
+      <button class="btn btn-gold" data-add="Radiance Gold Serum" data-price="58">Add to Bag — $58</button>
+    </div>
+    <p class="spot-fine">Free shipping over $75 · 60-day shade &amp; satisfaction promise</p>
+  </div>
+</section>
+
+<!-- ══════════ BESTSELLERS — EDITORIAL INDEX ══════════ -->
+<section class="shop-sec" id="shop">
+  <div class="sec-head reveal">
+    <p class="kicker">The Icons</p>
+    <h2>Bestsellers, <em>Indexed</em></h2>
+    <p class="sec-sub">Four formulas. Re-ordered before they run out, reviewed like love letters.</p>
+  </div>
+  <div class="product-index" id="productGrid"></div>
+</section>
+
+<!-- ══════════ RITUAL ══════════ -->
+<section class="ritual-sec" id="ritual">
+  <div class="ritual-media reveal">
+    <img src="assets/model.jpg" alt="Model wearing LUMÉRA, skin luminous with gold light" data-parallax>
+    <div class="ritual-quote">“Skin that doesn't<br>just glow — <em>radiates</em>.”</div>
+  </div>
+  <div class="ritual-text reveal">
+    <p class="kicker">The Ritual</p>
+    <h2>Three minutes.<br><em>All-day light.</em></h2>
     <ol class="steps">
-      <li><span>01</span><div><h3>Illuminate</h3><p>Two drops of Radiance Serum pressed into skin — gold pearls melt in and blur, brighten and hydrate in one step.</p></div></li>
-      <li><span>02</span><div><h3>Perfect</h3><p>Silk Veil Foundation over the top. Medium, buildable coverage that still looks like <em>your</em> skin — only luminous.</p></div></li>
-      <li><span>03</span><div><h3>Finish in colour</h3><p>One swipe of Satin Lip Colour. Vitamin-E enriched, never drying, colour that lasts through coffee and compliments.</p></div></li>
+      <li><span>01</span><div><h3>Illuminate</h3><p>Two drops of Radiance Serum, pressed — never rubbed — into skin. Gold pearls melt in and do the work of primer, highlighter and hydrator at once.</p></div></li>
+      <li><span>02</span><div><h3>Perfect</h3><p>Silk Veil Foundation over the top. Buildable, breathable coverage that still looks like <em>your</em> skin — only luminous.</p></div></li>
+      <li><span>03</span><div><h3>Finish in Colour</h3><p>One swipe of Satin Lip Colour. Vitamin-E enriched, never drying — colour that survives coffee and compliments.</p></div></li>
     </ol>
-    <a href="#shop" class="btn btn-dark">Shop the Ritual — from $38</a>
-    <p class="fine">*Independent consumer trial, 212 participants, 14 days.</p>
+    <a href="#shop" class="btn btn-dark">Shop the Ritual — from $32</a>
+    <p class="fine">98% said skin looked “lit from within” — independent consumer trial, 212 participants, 14 days.</p>
   </div>
 </section>
 
-<!-- SHADE FINDER -->
-<section class="section shade-sec" id="shades">
-  <p class="eyebrow center">Interactive — Try It</p>
-  <h2 class="title center">Find Your <em>Shade</em></h2>
-  <p class="sub center">Tap a swatch — watch the lip colour change.</p>
+<!-- ══════════ FULL-BLEED BAND ══════════ -->
+<section class="band" aria-label="Campaign image">
+  <img src="assets/poster.jpg" alt="" data-parallax loading="lazy">
+  <div class="band-shade" aria-hidden="true"></div>
+  <blockquote class="reveal">“Makeup is not a mask.<br>It is a <em>spotlight</em>.”</blockquote>
+</section>
+
+<!-- ══════════ SHADE FINDER ══════════ -->
+<section class="shade-sec" id="shades">
+  <div class="sec-head reveal">
+    <p class="kicker light">Interactive Atelier</p>
+    <h2>Find Your <em>Shade</em></h2>
+    <p class="sec-sub light">Six satin shades, one that's unmistakably yours. Tap a swatch.</p>
+  </div>
   <div class="shade-lab reveal">
     <div class="shade-preview">
-      <div class="lipstick-visual" id="lipVisual">💄</div>
+      <div class="lipstick-visual" id="lipVisual" aria-hidden="true">💄</div>
       <h3 id="shadeName">Rosewood Satin</h3>
       <p id="shadeDesc">A warm rose-nude — our #1 bestseller, suits every skin tone.</p>
       <p class="price-lg" id="shadePrice">$32</p>
       <button class="btn btn-gold" data-add="Satin Lip Colour" data-price="32">Add to Bag — $32</button>
     </div>
-    <div class="swatches" id="swatches"></div>
+    <div class="swatches" id="swatches" role="group" aria-label="Lip shades"></div>
   </div>
 </section>
 
-<!-- WHY -->
-<section class="section">
-  <div class="why-grid">
-    <div class="why reveal"><div class="why-ic">✦</div><h3>Gold Pearl Infused</h3><p>Micro-fine light-reflecting pearls — never glitter, never shimmer overload. Just light.</p></div>
-    <div class="why reveal"><div class="why-ic">🌿</div><h3>Clean & Kind</h3><p>Vegan, cruelty-free, paraben-free. Dermatologist tested on all skin types.</p></div>
-    <div class="why reveal"><div class="why-ic">💧</div><h3>Skincare First</h3><p>Hyaluronic acid + vitamin E in every formula. Makeup that treats while it tints.</p></div>
-    <div class="why reveal"><div class="why-ic">↩</div><h3>60-Day Promise</h3><p>Wrong shade? Unopened or opened — exchange or refund within 60 days, no questions.</p></div>
-  </div>
+<!-- ══════════ PRINCIPLES ══════════ -->
+<section class="principles">
+  <div class="pr reveal"><span class="pr-no">I.</span><h3>Gold Pearl Infused</h3><p>Micro-fine light-reflecting pearls — never glitter, never overload. Just light, engineered.</p></div>
+  <div class="pr reveal"><span class="pr-no">II.</span><h3>Clean &amp; Kind</h3><p>Vegan, cruelty-free, paraben-free. Dermatologist tested across all skin types.</p></div>
+  <div class="pr reveal"><span class="pr-no">III.</span><h3>Skincare First</h3><p>Hyaluronic acid and vitamin E in every formula. Makeup that treats while it tints.</p></div>
+  <div class="pr reveal"><span class="pr-no">IV.</span><h3>60-Day Promise</h3><p>Wrong shade? Opened or unopened — exchange or refund within 60 days. No questions.</p></div>
 </section>
 
-<!-- REVIEWS -->
-<section class="section alt" id="reviews">
-  <p class="eyebrow center">12,400+ Five-Star Reviews</p>
-  <h2 class="title center">The Glow <em>Speaks</em></h2>
-  <div class="review-grid">
-    <figure class="review reveal"><div class="stars">★★★★★</div><blockquote>“I stopped wearing foundation. The serum alone gives me that filtered-skin look in real life.”</blockquote><figcaption><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Amelia"><div><strong>Amelia R.</strong><span>Verified buyer — London</span></div></figcaption></figure>
-    <figure class="review reveal"><div class="stars">★★★★★</div><blockquote>“Rosewood is the first nude that doesn't wash me out. I've bought four — one for every bag.”</blockquote><figcaption><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Priya"><div><strong>Priya S.</strong><span>Verified buyer — Dubai</span></div></figcaption></figure>
-    <figure class="review reveal"><div class="stars">★★★★★</div><blockquote>“My makeup artist asked what highlighter I was wearing. It was just the serum under foundation.”</blockquote><figcaption><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="Sofia"><div><strong>Sofia M.</strong><span>Verified buyer — New York</span></div></figcaption></figure>
+<!-- ══════════ TESTIMONIALS ══════════ -->
+<section class="reviews-sec" id="reviews">
+  <p class="kicker reveal">12,400+ Five-Star Reviews</p>
+  <div class="quote-stage reveal" aria-live="polite">
+    <div class="q-stars" aria-hidden="true">★★★★★</div>
+    <blockquote id="quoteText">I stopped wearing foundation. The serum alone gives me that filtered-skin look in real life.</blockquote>
+    <p class="q-who"><strong id="quoteName">Amelia R.</strong><span id="quoteMeta">Verified buyer — London</span></p>
   </div>
+  <div class="q-dots reveal" id="quoteDots" role="tablist" aria-label="Choose review"></div>
 </section>
 
-<!-- GALLERY -->
-<section class="section">
-  <h2 class="title center">@lumera.beauty <em>on Instagram</em></h2>
+<!-- ══════════ GALLERY ══════════ -->
+<section class="gallery-sec">
+  <div class="sec-head reveal"><p class="kicker">The Campaign</p><h2>@lumera.beauty</h2></div>
   <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" alt="Makeup application" loading="lazy">
-    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80" alt="Beauty portrait" loading="lazy">
-    <img src="assets/poster.jpg" alt="LUMERA hero products" loading="lazy">
-    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&q=80" alt="Cosmetics flat lay" loading="lazy">
-    <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=600&q=80" alt="Skincare products" loading="lazy">
-    <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80" alt="Beauty products" loading="lazy">
+    <img class="g-tall reveal" src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=700&q=80" alt="Makeup application, editorial" loading="lazy">
+    <img class="reveal" src="assets/poster.jpg" alt="LUMÉRA gold radiance products" loading="lazy">
+    <img class="reveal" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=700&q=80" alt="Beauty portrait" loading="lazy">
+    <img class="g-tall reveal" src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=700&q=80" alt="Cosmetics, styled flat lay" loading="lazy">
+    <img class="reveal" src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=700&q=80" alt="Skincare ritual products" loading="lazy">
+    <img class="reveal" src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=700&q=80" alt="Beauty products in rose tones" loading="lazy">
   </div>
 </section>
 
-<!-- NEWSLETTER -->
+<!-- ══════════ NEWSLETTER ══════════ -->
 <section class="newsletter">
-  <h2>Join <em>The Glow List</em></h2>
-  <p>10% off your first order, early access to limited shades, zero spam.</p>
-  <form id="newsForm"><input type="email" required placeholder="Your email address" aria-label="Email"><button class="btn btn-gold" type="submit">Get 10% Off</button></form>
-  <p class="ok" id="newsOk"></p>
+  <p class="kicker light reveal">Private List</p>
+  <h2 class="reveal">Join <em>The Glow List</em></h2>
+  <p class="reveal">10% off your first order. Early access to limited shades. Never noise.</p>
+  <form id="newsForm" class="reveal"><label class="sr" for="newsEmail">Email address</label><input id="newsEmail" type="email" required placeholder="Your email address"><button class="btn btn-gold" type="submit">Get 10% Off</button></form>
+  <p class="ok" id="newsOk" role="status"></p>
 </section>
 
 <footer>
+  <div class="foot-word" aria-hidden="true">LUMÉRA</div>
   <div class="foot-grid">
-    <div><a class="logo light" href="#">LUM<span>É</span>RA</a><p>Luxury makeup & radiance skincare.<br>Clean formulas, gold standard glow.</p></div>
-    <div><h4>Shop</h4><a href="#shop">Bestsellers</a><a href="#shades">Lip Colour</a><a href="#shop">Serums</a><a href="#shop">Gift Sets</a></div>
-    <div><h4>Help</h4><a href="#">Shipping & Returns</a><a href="#">Shade Matching</a><a href="#">FAQ</a><a href="#">Contact Us</a></div>
-    <div><h4>Company</h4><a href="#story">Our Story</a><a href="#">Ingredients</a><a href="#">Sustainability</a><a href="#">Careers</a></div>
+    <div class="foot-brand"><p>Luxury makeup &amp; radiance skincare.<br>Clean formulas. A gold standard of glow.</p><p class="foot-est">Maison LUMÉRA — Est. MMXXVI</p></div>
+    <nav aria-label="Shop"><h4>Shop</h4><a href="#shop">Bestsellers</a><a href="#shades">Lip Colour</a><a href="#collections">Collections</a><a href="#ritual">The Ritual</a></nav>
+    <nav aria-label="Help"><h4>Care</h4><a href="#story">Shipping &amp; Returns</a><a href="#shades">Shade Matching</a><a href="#reviews">Reviews</a><a href="#story">Our Story</a></nav>
+    <nav aria-label="Company"><h4>Maison</h4><a href="#story">Manifesto</a><a href="#collections">Campaign</a><a href="#shop">Gift Sets</a><a href="https://akclnt.com" target="_blank" rel="noopener">AKCLNT Studio</a></nav>
   </div>
-  <div class="foot-bottom"><span>© 2026 LUMÉRA Beauty — Demo concept website.</span><span>Designed & built by <a href="https://akclnt.com" target="_blank" rel="noopener">AKCLNT</a></span></div>
+  <div class="foot-bottom"><span>© 2026 LUMÉRA Beauty — a demo concept experience.</span><span>Designed &amp; built by <a href="https://akclnt.com" target="_blank" rel="noopener">AKCLNT</a></span></div>
 </footer>
 
 <!-- CART DRAWER -->
 <div class="overlay" id="overlay"></div>
 <aside class="drawer" id="drawer" aria-label="Shopping bag">
-  <div class="drawer-head"><h3>Your Bag</h3><button id="closeDrawer" aria-label="Close">✕</button></div>
+  <div class="drawer-head"><h3>Your Bag</h3><button id="closeDrawer" aria-label="Close bag">✕</button></div>
   <div id="cartItems" class="cart-items"><p class="empty">Your bag is empty — your glow awaits ✨</p></div>
   <div class="drawer-foot"><div class="total"><span>Total</span><strong id="cartTotal">$0</strong></div>
-  <button class="btn btn-gold full" id="checkoutBtn">Checkout</button><p class="ok" id="checkoutOk"></p></div>
+  <button class="btn btn-gold full" id="checkoutBtn">Checkout</button><p class="ok dark" id="checkoutOk" role="status"></p></div>
 </aside>
 
 <script src="script.js"></script>
